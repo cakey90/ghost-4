@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://limou.cc,
+        url: 'http://limou.cc',
         mail: {},
         database: {
             client: 'mysql',
