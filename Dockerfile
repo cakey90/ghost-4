@@ -20,7 +20,7 @@ RUN arch="$(dpkg --print-architecture)" \
 ENV GHOST_SOURCE /usr/src/ghost
 WORKDIR $GHOST_SOURCE
 
-ENV GHOST_VERSION 0.7.8
+ENV GHOST_VERSION 0.7.4
 
 RUN buildDeps=' \
 		gcc \
@@ -30,7 +30,7 @@ RUN buildDeps=' \
 	' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
-	&& curl  "http://dl.ghostchina.com/Ghost-${GHOST_VERSION}-zh.zip" -o ghost.zip \
+	&& curl  "http://dl.ghostchina.com/Ghost-${GHOST_VERSION}-zh-full.zip" -o ghost.zip \
 	&& unzip ghost.zip \
 	&& npm install --production \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
